@@ -1,4 +1,4 @@
-#include <stdlib.h>
+ #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
@@ -55,23 +55,23 @@ int calculadora(int numero1, int numero2, int *suma, int *resta, int *producto) 
 int contar_letras(const char *texto){
     int contador_letras = 0;
     size_t longuitud_texto = strlen(texto);
-    // int indice_palabra = 0;
-    // char palabra[20];
+    int indice_palabra = 0;
+    char palabra[20];
 
     for (size_t i = 0; i<= longuitud_texto; i++){
         if (isalpha(texto[i])){
             contador_letras++;
         }
         // se comento el siguiente codigo para facilitar los test
-        // if (isspace(texto[i]) || texto[i] =='\0'){
-        //     if (indice_palabra > 0){
-        //         palabra[indice_palabra] = '\0';
-        //         printf("%s",palabra);
-        //         indice_palabra = 0;
-        //     }
-        // }else{
-        //     palabra[indice_palabra] = texto[i];
-        // }
+        if (isspace(texto[i]) || texto[i] =='\0'){
+            if (indice_palabra > 0){
+                palabra[indice_palabra] = '\0';
+                printf("%s",palabra);
+                indice_palabra = 0;
+            }
+        }else{
+            palabra[indice_palabra] = texto[i];
+        }
     }
     return contador_letras;
 
